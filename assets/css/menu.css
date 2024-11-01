@@ -1,0 +1,94 @@
+/**
+ * Style for the right menu of Testing Elevated plugin
+ */
+:root {
+  --testing-elevated-menu-color: dodgerblue;
+  --testing-elevated-menu-color-dark: #000;
+  --testing-elevated-menu-color-secondary: #fff;
+  --testing-elevated-menu-bg-color: #000;
+  --testing-elevated-menu-bg-color-secondary: dodgerblue;
+  --testing-elevated-menu-bg-color-secondary-lighter: #d7edff;
+}
+
+.testing-elevated-menu-wrapper {
+  font-size: 20px;
+  position: fixed;
+  right: 0;
+  top: 5em;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  z-index: 200;
+}
+
+.testing-elevated-menu__title {
+  color: var(--testing-elevated-menu-color);
+  background: var(--testing-elevated-menu-bg-color);
+  padding: 0.6em 1.6em 0.6em 0.6em;
+  border-bottom-left-radius: 0.3em;
+  border-top-left-radius: 0.3em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  z-index: 201;
+  line-height: 0;
+}
+
+.testing-elevated-menu-wrapper:hover .testing-elevated-menu__title {
+  color: var(--testing-elevated-menu-color-dark);
+  background: var(--testing-elevated-menu-bg-color-secondary-lighter);
+}
+
+.testing-elevated-menu__title__image {
+  width: auto;
+  height: 2em;
+  object-fit: cover;
+}
+
+.testing-elevated-menu {
+  color: var(--testing-elevated-menu-color);
+  background: var(--testing-elevated-menu-bg-color);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border-radius: 0.3em;
+  overflow: hidden;
+  max-width: 0;
+  transition: transform 0.2s ease-in-out, max-width 0.2s ease-in-out, margin-right 0.2s ease-in-out;
+  transform: translateX(110%);
+}
+
+.testing-elevated-menu-wrapper:hover > .testing-elevated-menu {
+  transform: translateX(0);
+  max-width: 14em;
+  margin-right: 0.6em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.6);
+}
+
+.testing-elevated-menu__item {
+  list-style: none;
+  padding: 0.6em;
+  cursor: pointer;
+  margin: 0;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.testing-elevated-menu__item:hover {
+  color: var(--testing-elevated-menu-color-dark);
+  background: var(--testing-elevated-menu-bg-color-secondary-lighter);
+}
+
+.testing-elevated-menu__item--active {
+  color: var(--testing-elevated-menu-color-secondary);
+  background: var(--testing-elevated-menu-bg-color-secondary);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.testing-elevated-menu__item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=menu.css.map */
